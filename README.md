@@ -1,5 +1,7 @@
 # Flowise document chatflow
 
+This a sample project to start using flowise with documents in memory vector store.
+
 ## Requirements
 
 1. docker
@@ -32,7 +34,7 @@ http://localhost:3000
 5. Login with credentials:
 * username: admin
 * passowrd: admin
-6. Go to `Chatflows` -> `Add new`
+6. Go to `Chatflows` > `Add new`
 7. Click on the cog icon on top right
 8. Select `Load Chatflow`
 9. Select the file `document-chatflow.json` in this directory.
