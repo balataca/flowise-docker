@@ -1,0 +1,22 @@
+version: "3.1"
+services:
+  flowise:
+    image: flowiseai/flowise:1.7.2
+    restart: always
+    network_mode: bridge
+    environment:
+      - PORT=3000
+      - FLOWISE_USERNAME=admin
+      - FLOWISE_PASSWORD=admin
+      - DATABASE_PATH=/root/.flowise
+      - APIKEY_PATH=/root/.flowise
+      - SECRETKEY_PATH=/root/.flowise
+      - LOG_PATH=/root/.flowise/logs
+      - BLOB_STORAGE_PATH=/root/.flowise/storage
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      - ./flowise:/root/.flowise
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: /bin/sh -c "sleep 3; flowise start"
